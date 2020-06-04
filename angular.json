@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "get-more-done"
+    }
+  },
+  "defaultProject": "get-more-done",
+  "cli": {
+    "analytics": false
+  }
 }
