@@ -18,9 +18,17 @@ export class ListComponent implements OnInit {
     this.getLists()
   }
 
+  lists: List[] = [];
+
   getLists(): void{
     this.listService.getLists()
-      .subscribe(lists => console.log(lists))
+      .subscribe(lists => this.lists = lists)
+    this.checkData()
+    
+  }
+
+  checkData(): void{
+    setTimeout(() => {console.log(this.lists)}, 1000)
   }
 
 }

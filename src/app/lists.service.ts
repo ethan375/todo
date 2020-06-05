@@ -16,7 +16,6 @@ export class ListsService {
   httpOptions = {
     headers: new HttpHeaders({ 
       'content-type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
     }),
   }
 

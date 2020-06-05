@@ -1,1 +1,12 @@
-<p>list works!</p>
+<div class="all-lists">
+    <ul>
+        <li *ngFor="let list of lists">
+            {{list.title}}
+            <ul *ngIf="list.tasks.length > 0">
+                <li *ngFor="let task of list.tasks">
+                    {{task}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
