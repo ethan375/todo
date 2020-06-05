@@ -3,6 +3,7 @@ import { Observable, of} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { List } from './list'
+import { JsonPipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class ListsService {
     }),
   }
 
-  private todoApi = 'localhost:3011/home'
+  private todoApi = 'http://localhost:3011/home'
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -38,6 +39,5 @@ export class ListsService {
         catchError(this.handleError<List>(`getLists`, []))
       )
   }
-
 
 }
