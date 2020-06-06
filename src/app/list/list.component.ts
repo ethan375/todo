@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { ListsService } from '../lists.service'
-import { List } from "../list";
+import { List } from "../List";
 
 @Component({
   selector: 'app-list',
@@ -17,14 +17,8 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getLists()
   }
 
-  lists: List[] = [];
-
-  getLists(): void{
-    this.listService.getLists()
-      .subscribe(lists => this.lists = lists) 
-  }
+  @Input() list: List
 
 }

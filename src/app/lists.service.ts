@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { List } from './list'
+import { List } from './List'
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +34,7 @@ export class ListsService {
     return this.http.get<List[]>(this.todoApi)
       .pipe(
         tap(_ => console.log(`fetched lists`)),
-        catchError(this.handleError<List>(`getLists`, []))
+        // catchError(this.handleError<List>(`getLists`, []))
       )
   }
 

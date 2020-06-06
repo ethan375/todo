@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { TaskComponent } from './task/task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     TaskComponent,
-    DashboardComponent
+    DashboardComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
