@@ -22,13 +22,7 @@ export class ListComponent implements OnInit {
 
   getLists(): void{
     this.listService.getLists()
-      .subscribe(lists => this.lists = lists)
-    this.checkData()
-    
-  }
-
-  checkData(): void{
-    setTimeout(() => {console.log(this.lists)}, 1000)
+      .subscribe(lists => this.lists = lists) 
   }
 
 }

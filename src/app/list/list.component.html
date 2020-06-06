@@ -4,7 +4,7 @@
             {{list.title}}
             <ul *ngIf="list.tasks.length > 0">
                 <li *ngFor="let task of list.tasks">
-                    {{task}}
+                    {{task.name}}
                 </li>
             </ul>
         </li>
