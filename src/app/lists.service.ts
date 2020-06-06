@@ -38,4 +38,11 @@ export class ListsService {
       )
   }
 
+  createList(list: object): Observable<List>{
+    return this.http.post<List>(this.todoApi, list, this.httpOptions).pipe(
+      tap((newList: List) => console.log(`this is the new list ${newList}`)),
+      catchError(this.handleError<List>('createList'))
+    )
+  }
+
 }

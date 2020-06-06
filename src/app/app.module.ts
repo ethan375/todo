@@ -9,6 +9,7 @@ import { ListComponent } from './list/list.component';
 import { TaskComponent } from './task/task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OverviewComponent } from './overview/overview.component';
+import { NewListComponent } from './new-list/new-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { OverviewComponent } from './overview/overview.component';
     ListComponent,
     TaskComponent,
     DashboardComponent,
-    OverviewComponent
+    OverviewComponent,
+    NewListComponent
   ],
   imports: [
     BrowserModule,

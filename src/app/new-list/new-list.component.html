@@ -1,0 +1,6 @@
+<h2>Create a new list</h2>
+<form> 
+    <label>List name</label>
+    <input type="text" placeholder="dope new list name" #listTitle>
+    <button (click)="createNewList(listTitle.value)">Submit</button>
+</form>
