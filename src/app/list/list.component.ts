@@ -6,7 +6,9 @@ import { List } from "../list";
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  // template: `<app-task *ngFor="let task of list.task"
+  // [tasks]=list.tasks></app-task>`
 })
 export class ListComponent implements OnInit {
 
