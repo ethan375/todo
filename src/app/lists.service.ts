@@ -3,7 +3,6 @@ import { Observable, of} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { List } from './list'
-import { JsonPipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
