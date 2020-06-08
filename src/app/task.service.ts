@@ -40,9 +40,10 @@ export class TaskService {
   }
 
   toggleCompleted(task: Task): Observable<Task> {
-    const route = this.baseTaskRoute + `/toggle-completed/${task['id']}`
+    const route = this.baseTaskRoute + `/toggle-completed/${task['_id']}`
+    console.log(route)
     //eventually in tap we need to send the user a message
-    return this.http.put<Task>(route, task, this.httpOptions).pipe(
+    return this.http.patch<Task>(route, task, this.httpOptions).pipe(
       tap((updatedTask) => console.log(`this is the updated task ${updatedTask}`)),
       catchError(this.handleError<Task>('toggleCompleted'))
     )
