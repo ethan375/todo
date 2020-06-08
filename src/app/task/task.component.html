@@ -1,4 +1,4 @@
 <div class="task">
-    <input class="task__completed" type="checkbox" [checked]="task.completed" />
+    <input (click)="toggleCompleted()" class="task__completed" type="checkbox" [checked]="task.completed" />
     <p class="task__name">{{ task.name }}</p>
 </div>

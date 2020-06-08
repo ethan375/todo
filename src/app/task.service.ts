@@ -15,6 +15,8 @@ export class TaskService {
 
   private newTaskRoute = 'http://localhost:3011/tasks/new'
 
+  private deleteTaskRoute = 'http://localhost:3011/tasks/delete'
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.log(`some shit went wrong`)
@@ -34,7 +36,14 @@ export class TaskService {
   createNewTask(task: object): Observable<Task> {
     return this.http.post<Task>(this.newTaskRoute, task, this.httpOptions).pipe(
       tap((newTask: Task) => console.log(`this is the new task ${newTask}`)),
-      catchError(this.handleError<Task>('createTask'))
+      catchError(this.handleError<Task>('createNewTask'))
+    )
+  }
+
+  deleteTask(task: string): Observable<Task> {
+    return this.http.delete<Task>(this.deleteTaskRoute, task).pipe(
+      tap((deletedTask: Task) => console.log(`the task has been deleted`)),
+      catchError(this.handleError<Task>('deleteTask'))
     )
   }
 }
