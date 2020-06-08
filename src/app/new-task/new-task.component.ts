@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms'
+import { Router } from '@angular/router'
 
 import { Task } from '../Task'
 import { TaskService } from '../task.service'
@@ -16,7 +17,8 @@ export class NewTaskComponent implements OnInit {
 
   constructor(
     private taskService: TaskService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,5 +33,6 @@ export class NewTaskComponent implements OnInit {
       list: id
     }
     this.taskService.createNewTask(task)
+      .subscribe(() => this.router.navigateByUrl('/lists')) //this function needs to return the user to the overview component
   }
 }

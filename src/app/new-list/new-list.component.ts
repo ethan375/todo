@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
 import { FormControl } from '@angular/forms'
+import { Router } from '@angular/router'
 
 import { ListsService } from '../lists.service'
 import { List } from '../List'
@@ -15,6 +16,7 @@ export class NewListComponent implements OnInit {
 
   constructor(
     private listService: ListsService,
+    private router: Router,
     private location: Location
   ) { }
 
@@ -25,13 +27,7 @@ export class NewListComponent implements OnInit {
     const newList = {title: this.newList.value}
 
     this.listService.createList( newList )
-      .subscribe((newList) => console.log(newList))
+      .subscribe(() => this.router.navigateByUrl('/lists'))
   }
-
-
-  // goBack(): void{
-  //   this.location.go('http://localhost:4200/lists')
-  //   console.log(`this is the go back function... is it working???`)
-  // }
 
 }
