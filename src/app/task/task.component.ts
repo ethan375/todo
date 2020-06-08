@@ -20,8 +20,8 @@ export class TaskComponent implements OnInit {
   }
 
   toggleCompleted(): void{
-    const id = this.task['_id'];
-    this.taskService.deleteTask(id)
+    // const id = this.task['_id'];
+    this.taskService.toggleCompleted(this.task)
   }
   
 }

@@ -13,9 +13,7 @@ export class TaskService {
     private http: HttpClient
   ) { }
 
-  private newTaskRoute = 'http://localhost:3011/tasks/new'
-
-  private deleteTaskRoute = 'http://localhost:3011/tasks/delete'
+  private baseTaskRoute = 'http://localhost:3011/tasks'
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -34,14 +32,25 @@ export class TaskService {
   }
 
   createNewTask(task: object): Observable<Task> {
-    return this.http.post<Task>(this.newTaskRoute, task, this.httpOptions).pipe(
+    const route = this.baseTaskRoute + "/new"
+    return this.http.post<Task>(route, task, this.httpOptions).pipe(
       tap((newTask: Task) => console.log(`this is the new task ${newTask}`)),
       catchError(this.handleError<Task>('createNewTask'))
     )
   }
 
+  toggleCompleted(task: Task): Observable<Task> {
+    const route = this.baseTaskRoute + `/toggle-completed/${task['id']}`
+    //eventually in tap we need to send the user a message
+    return this.http.put<Task>(route, task, this.httpOptions).pipe(
+      tap((updatedTask) => console.log(`this is the updated task ${updatedTask}`)),
+      catchError(this.handleError<Task>('toggleCompleted'))
+    )
+  }
+
   deleteTask(task: string): Observable<Task> {
-    return this.http.delete<Task>(this.deleteTaskRoute, task).pipe(
+    const route = this.baseTaskRoute + "/new"
+    return this.http.delete<Task>(route, task).pipe(
       tap((deletedTask: Task) => console.log(`the task has been deleted`)),
       catchError(this.handleError<Task>('deleteTask'))
     )
