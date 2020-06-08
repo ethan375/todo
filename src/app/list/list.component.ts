@@ -17,8 +17,15 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getId();
   }
 
   @Input() list: List
+
+  listId: string = '';
+  
+ getId(): void {
+   this.listId = this.list['_id']
+ }
 
 }

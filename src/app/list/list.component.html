@@ -1,5 +1,6 @@
 {{list.title}}
 <ul>
+    <a [routerLink]="['/new-task', listId]">Create a new task</a>
     <li *ngFor="let task of list.tasks" >
         <app-task [task]="task"></app-task>
     </li>
