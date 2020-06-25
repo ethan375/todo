@@ -34,7 +34,7 @@ export class ListsService {
     return this.http.get<List[]>(this.todoApi)
       .pipe(
         tap(_ => console.log(`fetched lists`)),
-        catchError(this.handleError<List>(`getLists`, []))
+        catchError(this.handleError<List[]>(`getLists`, []))
       )
   }
 
