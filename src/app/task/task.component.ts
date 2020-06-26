@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../Task'
 
 import { TaskService } from '../task.service'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-task',
@@ -20,9 +21,8 @@ export class TaskComponent implements OnInit {
   }
 
   toggleCompleted(): void{
-    // const id = this.task['_id'];
-    this.taskService.toggleCompleted(this.task)
-      .subscribe(alteredTask => console.log(alteredTask))
+    this.taskService.toggleCompleted( this.task )
+      .subscribe( alteredTask => console.log(alteredTask) )
   }
   
 }
