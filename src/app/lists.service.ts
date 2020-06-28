@@ -3,6 +3,7 @@ import { Observable, of} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { List } from './List'
+import { TaskService } from './task.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,10 @@ import { List } from './List'
 
 export class ListsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private taskService: TaskService,
+    ) { }
 
   httpOptions = {
     headers: new HttpHeaders({ 

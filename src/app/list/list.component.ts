@@ -7,8 +7,6 @@ import { List } from "../List";
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
-  // template: `<app-task *ngFor="let task of list.task"
-  // [tasks]=list.tasks></app-task>`
 })
 export class ListComponent implements OnInit {
 
@@ -26,6 +24,10 @@ export class ListComponent implements OnInit {
   
  getId(): void {
    this.listId = this.list['_id']
+ }
+
+ getTasks(): void {
+
  }
 
 }

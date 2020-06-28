@@ -11,18 +11,25 @@ import { Observable } from 'rxjs';
 })
 export class TaskComponent implements OnInit {
   
-  @Input() task: Task;
+  @Input() taskId: String;
+  public task = null
 
   constructor(
-    private taskService: TaskService
+    private taskService: TaskService   
   ) { }
 
   ngOnInit(): void {
+    this.getTask()
   }
 
   toggleCompleted(): void{
     this.taskService.toggleCompleted( this.task )
       .subscribe( alteredTask => console.log(alteredTask) )
+  }
+
+  getTask(): void {
+    this.taskService.getTasksInList( this.taskId )
+      .subscribe( fetchedTask => this.task = fetchedTask)
   }
   
 }

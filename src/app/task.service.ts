@@ -48,6 +48,20 @@ export class TaskService {
     )
   }
 
+
+  getTasksInList(taskId: String): Observable<Task> {
+    const route = this.baseTaskRoute + `/${taskId}`
+
+    return this.http.get<Task>(route, this.httpOptions).pipe
+    (tap((tasks) => console.log(`idk if this is the best way to like be getting this data er what, but like it needs to be done, but heres the tasks ${tasks}`)),
+      catchError(this.handleError<Task>('Theres been an error!')))
+  }
+
+
+
+
+
+
   // deleteTask(task: string): Observable<Task> {
   //   const route = this.baseTaskRoute + "/new"
   //   return this.http.delete<Task>(route, task).pipe(
