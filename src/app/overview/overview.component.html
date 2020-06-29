@@ -1,6 +1,7 @@
 <div class="all_lists">
-    <a routerLink="/new-list">Create a new list</a>
-    <li *ngFor="let list of lists">
+    <a class="new_list_button ui primary button" routerLink="/new-list">Create a new list</a>
+    <button> this is like the dopest button eva</button>
+    <li class="" *ngFor="let list of lists">
         <app-list [list]="list"></app-list>
     </li>
 </div>
