@@ -29,7 +29,7 @@ export class TaskComponent implements OnInit {
 
   getTask(): void {
     this.taskService.getTasksInList( this.taskId )
-      .subscribe( fetchedTask => this.task = fetchedTask)
+      .subscribe( fetchedTask => this.task = fetchedTask[0] )
   }
   
 }

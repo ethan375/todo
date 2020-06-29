@@ -53,7 +53,7 @@ export class TaskService {
     const route = this.baseTaskRoute + `/${taskId}`
 
     return this.http.get<Task>(route, this.httpOptions).pipe
-    (tap((tasks) => console.log(`idk if this is the best way to like be getting this data er what, but like it needs to be done, but heres the tasks ${tasks}`)),
+    (tap((tasks) => console.log(`this is the task: ${tasks.name}`)),
       catchError(this.handleError<Task>('Theres been an error!')))
   }
 
