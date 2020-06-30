@@ -22,7 +22,7 @@ export class ListsService {
     }),
   }
 
-  private todoApi = 'http://localhost:3011/home'
+  private todoApi = 'http://localhost:3011/'
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -35,7 +35,9 @@ export class ListsService {
   }
 
   getLists(): Observable<List[]>{
-    return this.http.get<List[]>(this.todoApi)
+    const route = this.todoApi + `home`
+
+    return this.http.get<List[]>(route)
       .pipe(
         tap(_ => console.log(`fetched lists`)),
         catchError(this.handleError<List[]>(`getLists`, []))
@@ -43,9 +45,21 @@ export class ListsService {
   }
 
   createList(list: object): Observable<List>{
-    return this.http.post<List>(this.todoApi, list, this.httpOptions).pipe(
+    const route = this.todoApi + `home`
+
+    return this.http.post<List>(route, list, this.httpOptions).pipe(
       tap((newList: List) => console.log(`this is the new list ${newList}`)),
       catchError(this.handleError<List>('createList'))
+    )
+  }
+
+
+  deleteList(list): Observable<any>{
+    const route = this.todoApi + `lists/delete/${list}`
+
+    return this.http.delete(route, list).pipe(
+      tap( deletedList => console.log(`this is the list that has been deleted! ${deletedList}`)),
+      catchError(this.handleError<List>('deleteList'))
     )
   }
 

@@ -26,8 +26,9 @@ export class ListComponent implements OnInit {
    this.listId = this.list['_id']
  }
 
- getTasks(): void {
-
+ deleteList(): void {
+   this.listService.deleteList(this.listId)
+    .subscribe(deletedList => window.location.reload())
  }
 
 }
