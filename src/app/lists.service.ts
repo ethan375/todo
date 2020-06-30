@@ -54,10 +54,10 @@ export class ListsService {
   }
 
 
-  deleteList(list): Observable<any>{
+  deleteList(list: String): Observable<any>{
     const route = this.todoApi + `lists/delete/${list}`
 
-    return this.http.delete(route, list).pipe(
+    return this.http.delete(route).pipe(
       tap( deletedList => console.log(`this is the list that has been deleted! ${deletedList}`)),
       catchError(this.handleError<List>('deleteList'))
     )

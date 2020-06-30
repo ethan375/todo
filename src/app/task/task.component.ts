@@ -32,4 +32,8 @@ export class TaskComponent implements OnInit {
       .subscribe( fetchedTask => this.task = fetchedTask[0] )
   }
   
+  deleteTask(): void {
+    this.taskService.deleteTask( this.taskId )
+      .subscribe( deletedTask => window.location.reload() )
+  }
 }

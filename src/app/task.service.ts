@@ -59,14 +59,12 @@ export class TaskService {
 
 
 
+  deleteTask(task: String): Observable<any> {
+    const route = this.baseTaskRoute + `/delete/${task}`
 
-
-
-  // deleteTask(task: string): Observable<Task> {
-  //   const route = this.baseTaskRoute + "/new"
-  //   return this.http.delete<Task>(route, task).pipe(
-  //     tap((deletedTask: Task) => console.log(`the task has been deleted`)),
-  //     catchError(this.handleError<Task>('deleteTask'))
-  //   )
-  // }
+    return this.http.delete<any>(route).pipe(
+      tap( deletedTask => console.log(`task deleted`)),
+        catchError(this.handleError(`some shit went wrong`))
+    )
+  }
 }
