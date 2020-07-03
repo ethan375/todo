@@ -43,17 +43,17 @@ export class TaskService {
     const route = this.baseTaskRoute + `/toggle-completed/${task["_id "]}`
     //eventually in tap we need to send the user a message
     return this.http.patch<Task>(route, task, this.httpOptions).pipe(
-      tap((updatedTask) => console.log(`this is the updated task ${updatedTask}`)),
+      tap((updatedTask) => `this is the task: ${updatedTask}`),
       catchError(this.handleError<Task>('toggleCompleted'))
     )
   }
 
 
-  getTasksInList(taskId: String): Observable<Task> {
+  getTask(taskId: String): Observable<Task> {
     const route = this.baseTaskRoute + `/${taskId}`
 
     return this.http.get<Task>(route, this.httpOptions).pipe
-    (tap((tasks) => console.log(`this is the task: ${tasks.name}`)),
+    (tap((task) => console.log(`task fetched: ${task}`)),
       catchError(this.handleError<Task>('Theres been an error!')))
   }
 

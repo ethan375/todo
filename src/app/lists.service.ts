@@ -39,8 +39,8 @@ export class ListsService {
 
     return this.http.get<List[]>(route)
       .pipe(
-        tap(_ => console.log(`fetched lists`)),
-        catchError(this.handleError<List[]>(`getLists`, []))
+        tap( list => console.log(`fetched list: ${list}`)),
+        catchError(this.handleError<List[]>(`an error has done occured`, []))
       )
   }
 

@@ -28,7 +28,7 @@ export class TaskComponent implements OnInit {
   }
 
   getTask(): void {
-    this.taskService.getTasksInList( this.taskId )
+    this.taskService.getTask( this.taskId )
       .subscribe( fetchedTask => this.task = fetchedTask[0] )
   }
   

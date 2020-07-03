@@ -1,5 +1,5 @@
 <div class="list">
-    <p class="list__title">{{list.title}}</p>
+    <p class="list__title">{{ list.title }}</p>
     <ul>
         <a [routerLink]="['/new-task', listId]">Create a new task</a>
         <button style="background-color: red;" (click)="deleteList()">Delete List</button>
