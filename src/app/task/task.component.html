@@ -1,5 +1,5 @@
 <div class="task">
     <input (click)="toggleCompleted()" class="task__completed" type="checkbox" [checked]="task.completed" /> 
      <p class="task__name">{{ task.name }}</p>
-     <button style="background-color: red;"  (click)="deleteTask()">Delete this task</button>
+     <button mat-raised-button color="warn"  (click)="deleteTask()">Delete this task</button>
 </div>

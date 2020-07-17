@@ -1,6 +1,5 @@
 <div class="all_lists">
-    <a class="new_list_button ui primary button" routerLink="/new-list">Create a new list</a>
-    <!-- <button> this is like the dopest button eva</button> -->
+    <a mat-raised-button color="primary" class="new_list_button ui primary button" routerLink="/new-list">Create a new list</a>
     <li class="" *ngFor="let list of lists">
         <app-list [list]="list"></app-list>
     </li>

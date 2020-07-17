@@ -1,10 +1,12 @@
 <div class="list">
-    <p class="list__title">{{ list.title }}</p>
-    <ul>
-        <a [routerLink]="['/new-task', listId]">Create a new task</a>
-        <button style="background-color: red;" (click)="deleteList()">Delete List</button>
-        <li *ngFor="let task of list.tasks" >
-            <app-task [taskId]="task"></app-task>
-        </li>
-    </ul>
+    <mat-card>
+        <mat-card-title class="list__title">{{ list.title }}</mat-card-title>
+        <ul>
+            <a class="list__new_task" color="primary" mat-raised-button [routerLink]="['/new-task', listId]">Create a new task</a>
+            <button mat-raised-button color="warn" (click)="deleteList()">Delete List</button>
+            <li *ngFor="let task of list.tasks" >
+                <app-task [taskId]="task"></app-task>
+            </li>
+        </ul>
+    </mat-card>
 </div>
