@@ -22,7 +22,7 @@ export class ListsService {
     }),
   }
 
-  private todoApi = 'http://localhost:3011/'
+  private todoApi = 'https://ethans-todo-api.herokuapp.com/'
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

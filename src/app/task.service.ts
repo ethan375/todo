@@ -13,7 +13,7 @@ export class TaskService {
     private http: HttpClient
   ) { }
 
-  private baseTaskRoute = 'http://localhost:3011/tasks'
+  private baseTaskRoute = 'https://ethans-todo-api.herokuapp.com/tasks'
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
