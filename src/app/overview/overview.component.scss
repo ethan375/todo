@@ -1,7 +1,21 @@
+.list {
+    margin-bottom: 40px;
+    list-style-type: none;
+
+    grid-column: 2/3;
+}
+
 .all_lists {
-    border: 1px solid lightslategrey;
+
+    display: grid;
+
+    grid-template-columns: auto 40% auto;
+    grid-template-rows: 45px;
+    grid-auto-rows: auto;
 }
 
 .new_list_button {
-    
+    width: 175px;
+    grid-column: 2/3;
+    justify-self: center;
 }
