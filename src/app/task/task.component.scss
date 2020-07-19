@@ -9,3 +9,12 @@
         border-radius: 100%;
     }
 }
+
+.completed {
+    text-decoration: line-through;
+}
+
+.task__checkbox {
+    height: 25px;
+    width: 25px;
+}
