@@ -3,7 +3,7 @@
         <mat-card-title class="list__title">{{ list.title }}</mat-card-title>
         <ul>
             <a class="list__new_task" color="primary" mat-raised-button [routerLink]="['/new-task', listId]">Create a new task</a>
-            <button mat-raised-button color="warn" (click)="deleteList()">Delete List</button>
+            <button class="delete_list" mat-raised-button color="warn" (click)="deleteList()">Delete List</button>
             <li class="task" *ngFor="let task of list.tasks" >
                 <app-task [taskId]="task"></app-task>
             </li>
