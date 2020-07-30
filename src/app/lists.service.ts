@@ -35,7 +35,7 @@ export class ListsService {
   }
 
   getLists(): Observable<List[]>{
-    const route = this.todoApi + `home`
+    const route = this.todoApi + `lists`
 
     return this.http.get<List[]>(route)
       .pipe(
