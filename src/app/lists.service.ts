@@ -45,7 +45,7 @@ export class ListsService {
   }
 
   createList(list: object): Observable<List>{
-    const route = this.todoApi + `home`
+    const route = this.todoApi + `lists`
 
     return this.http.post<List>(route, list, this.httpOptions).pipe(
       tap((newList: List) => console.log(`this is the new list ${newList}`)),
