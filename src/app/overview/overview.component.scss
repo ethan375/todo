@@ -22,3 +22,10 @@
     grid-column: 2/3;
     justify-self: center;
 }
+
+
+@media only screen and (min-width: 320px) {
+    .list {
+        grid-column: 1/-1;
+    }
+}
