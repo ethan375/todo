@@ -33,3 +33,13 @@
     text-decoration: line-through;
 }
 
+
+
+@media only screen and (min-width: 320px) {
+    .task {
+        &__delete {
+            height: 35px;
+            // width: 75px;
+        }
+    }
+}
