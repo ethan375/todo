@@ -1,5 +1,5 @@
 <div class="list">
-    <mat-card>
+    <mat-card (click)="toggleTasks()">
 
         
         <mat-card-title class="list__title">{{ list.title }}</mat-card-title>
@@ -8,7 +8,7 @@
 
         <button class="delete_list" mat-raised-button color="warn" (click)="deleteList()">Delete List</button>
 
-        <ul class="list__tasks">
+        <ul [ngClass]="collapsed ? 'list__tasks__hidden' : 'list__tasks__extended'">
             <li class="task" *ngFor="let task of list.tasks" >
                 <app-task [taskId]="task"></app-task>
             </li>

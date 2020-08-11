@@ -18,6 +18,8 @@ export class ListComponent implements OnInit {
     this.getId();
   }
 
+  collapsed: boolean = true
+
   @Input() list: List
 
   listId: string = '';
@@ -29,6 +31,10 @@ export class ListComponent implements OnInit {
  deleteList(): void {
    this.listService.deleteList(this.listId)
     .subscribe(deletedList => window.location.reload())
+ }
+
+ toggleTasks(): void {
+   this.collapsed = !this.collapsed
  }
 
 }
