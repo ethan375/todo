@@ -6,10 +6,11 @@
 
         <a class="list__new_task" color="primary" mat-raised-button [routerLink]="['/new-task', listId]">Create a new task</a>
 
+        <span (click)="toggleTasks" class="dropdown__control">click here</span>
+
         <button class="delete_list" mat-raised-button color="warn" (click)="deleteList()">Delete List</button>
 
-        <!-- <ul [ngClass]="collapsed ? 'list__tasks__hidden' : 'list__tasks__extended'"> -->
-        <ul class="list__tasks__extended">
+        <ul [ngClass]="collapsed ? 'list__tasks__hidden' : 'list__tasks__extended'">
 
             <li class="task" *ngFor="let task of tasks" >
 
