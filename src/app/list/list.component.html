@@ -9,9 +9,12 @@
         <button class="delete_list" mat-raised-button color="warn" (click)="deleteList()">Delete List</button>
 
         <ul [ngClass]="collapsed ? 'list__tasks__hidden' : 'list__tasks__extended'">
-            <li class="task" *ngFor="let task of list.tasks" >
-                <app-task [taskId]="task"></app-task>
+
+            <li class="task" *ngFor="let task of tasks" >
+
+                <app-task [task]="task"></app-task>
             </li>
+            
         </ul>
 
 
