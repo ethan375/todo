@@ -30,14 +30,13 @@ export class ListComponent implements OnInit {
 
   listId: string = '';
 
-  tasks: Task[] = []
+  tasks: object = null
 
   //functions
 
   getAllTasks(): void {
     this.taskService.getBulkTasks(this.list.tasks)
-      .subscribe(tasks => {this.tasks = tasks
-        console.log(tasks)})
+      .subscribe(tasks => {this.tasks = tasks})
     
   }
 
