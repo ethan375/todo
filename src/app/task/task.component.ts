@@ -25,14 +25,9 @@ export class TaskComponent implements OnInit {
     this.taskService.toggleCompleted( this.task )
       .subscribe( alteredTask => console.log(alteredTask) )
   }
-
-  getTask(): void {
-    this.taskService.getTask( this.taskId )
-      .subscribe( fetchedTask => this.task = fetchedTask[0] )
-  }
   
   deleteTask(): void {
-    this.taskService.deleteTask( this.taskId )
+    this.taskService.deleteTask( this.task["_id"] )
       .subscribe( deletedTask => window.location.reload() )
   }
 }
