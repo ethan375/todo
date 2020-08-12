@@ -48,6 +48,16 @@ export class TaskService {
     )
   }
 
+  getBulkTasks(tasks: Object): Observable<Task> {
+    const route = this.baseTaskRoute + `/bulk-tasks`;
+    const listTasks = {tasks: tasks}
+
+    return this.http.post<Task>(route, listTasks, this.httpOptions).pipe(
+      tap((allTasks) => `here are the tasks: ${allTasks}`),
+      // catchError(this.handleError<Task>'getBulkTasks'))
+    )
+  }
+
 
   getTask(taskId: String): Observable<Task> {
     const route = this.baseTaskRoute + `/${taskId}`
