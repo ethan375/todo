@@ -30,7 +30,7 @@ export class ListComponent implements OnInit {
 
   listId: string = '';
 
-  tasks: Task[] = []
+  tasks: object = null;
 
   //functions
 
