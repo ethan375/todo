@@ -30,13 +30,14 @@ export class ListComponent implements OnInit {
 
   listId: string = '';
 
-  tasks: object = null
+  tasks: Task[] = []
 
   //functions
 
   getAllTasks(): void {
     this.taskService.getBulkTasks(this.list.tasks)
-      .subscribe(tasks => {this.tasks = tasks})
+      .subscribe(tasks => {this.sortTasks(tasks)})
+
     
   }
 
@@ -52,5 +53,16 @@ export class ListComponent implements OnInit {
  toggleTasks(): void {
    this.collapsed = !this.collapsed
  }
+
+ sortTasks(tasks): void {
+
+   for ( let i = 0; i < tasks.length; i++) {
+     if ( tasks[i].completed == true ) {
+       this.tasks.push(tasks[i])
+     } else {
+       this.tasks.unshift(tasks[i])
+      }
+    }
+  }
 
 }
