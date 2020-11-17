@@ -63,4 +63,17 @@ export class ListsService {
     )
   }
 
+  deleteCompleted( completedTasks: String[] ) {
+    let route = this.todoApi + `tasks/delete/delete-completed?`
+
+    for ( let i = 0; i < completedTasks.length; i++ ) {
+      route += completedTasks[i] + `?`
+    }
+
+    return this.http.delete(route, this.httpOptions).pipe(
+      tap((deletedLists => console.log(deletedLists)),
+      catchError(this.handleError<List>('deletedLists')))
+    )
+  }
+
 }
