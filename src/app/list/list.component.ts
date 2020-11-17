@@ -77,6 +77,7 @@ export class ListComponent implements OnInit {
     }
     
     this.listService.deleteCompleted( completedTasks )
+      .subscribe(deletedTask => window.location.reload())
   }
 
 }
