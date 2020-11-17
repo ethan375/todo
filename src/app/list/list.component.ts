@@ -76,7 +76,7 @@ export class ListComponent implements OnInit {
       }
     }
     
-    // this.listService.deleteCompleted( completedTasks )
+    this.listService.deleteCompleted( completedTasks )
   }
 
 }
