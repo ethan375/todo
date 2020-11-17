@@ -65,18 +65,4 @@ export class ListComponent implements OnInit {
     }
   }
 
-
-  deleteCompleted(): void {
-
-    let completedTasks = []
-
-    for( let i = 0; i < this.tasks.length; i++) {
-      if ( this.tasks[i].completed == true ) {
-        completedTasks.push( this.tasks[i]['_id'] )
-      }
-    }
-    
-    this.listService.deleteCompleted( completedTasks )
-  }
-
 }

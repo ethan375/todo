@@ -10,10 +10,6 @@
 
         <button class="delete_list" mat-raised-button color="warn" (click)="deleteList()">Delete List</button>
 
-        <button [ngClass]="collapsed ? 'hidden' : 'delete_completed'"  mat-raised-button color="warn" (click)="deleteCompleted()">
-            Delete all completed tasks
-        </button>
-
         <ul [ngClass]="collapsed ? 'list__tasks__hidden' : 'list__tasks__extended'">
 
             <li class="task" *ngFor="let task of tasks" >
