@@ -1,7 +1,7 @@
 <div class="task__item">
     <input (click)="toggleCompleted()" class="task__checkbox" type="checkbox" [checked]="task.completed" /> 
 
-     <p class="task__name" [ngClass]="{completed: task.completed}">{{ task.name }}</p>
+     <p class="task__name" [ngClass]="this.completed ? 'completed' : 'not-completed'">{{ task.name }}</p>
 
      <button class="task__delete" mat-raised-button color="warn"  (click)="deleteTask()">Delete this task</button>
 </div>
