@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ListsService } from '../lists.service'
-import { List } from "../List"
+import { ListsService } from '../../lists.service'
+import { List } from "../../List"
 
 @Component({
   selector: 'app-overview',

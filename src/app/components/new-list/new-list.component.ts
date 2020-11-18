@@ -3,8 +3,8 @@ import { Location } from '@angular/common'
 import { FormControl } from '@angular/forms'
 import { Router } from '@angular/router'
 
-import { ListsService } from '../lists.service'
-import { List } from '../List'
+import { ListsService } from '../../lists.service'
+import { List } from '../../List'
 
 @Component({
   selector: 'app-new-list',

@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms'
 import { Router } from '@angular/router'
 
-import { Task } from '../Task'
-import { TaskService } from '../task.service'
+import { Task } from '../../Task'
+import { TaskService } from '../../task.service'
 
 @Component({
   selector: 'app-new-task',

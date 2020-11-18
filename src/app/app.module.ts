@@ -15,8 +15,9 @@ import { OverviewComponent } from './overview/overview.component';
 import { NewListComponent } from './new-list/new-list.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthComponent } from './auth/auth.component';
+import { AuthComponent } from './components/auth/auth.component';
 import { RegisterComponent } from './register/register.component';
+import { AzComponent } from './az/az.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterComponent } from './register/register.component';
     NewListComponent,
     NewTaskComponent,
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    AzComponent
   ],
   imports: [
     MatCardModule,

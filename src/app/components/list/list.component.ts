@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { ListsService } from '../lists.service';
-import { TaskService } from '../task.service';
-import { List } from "../List";
-import { Task } from "../Task"
+import { ListsService } from '../../lists.service';
+import { TaskService } from '../../task.service';
+import { List } from "../../List";
+import { Task } from "../../Task"
 
 @Component({
   selector: 'app-list',
