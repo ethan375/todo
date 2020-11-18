@@ -8,16 +8,16 @@ import { MatCardModule } from '@angular/material/card'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
-import { TaskComponent } from './task/task.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { OverviewComponent } from './overview/overview.component';
-import { NewListComponent } from './new-list/new-list.component';
-import { NewTaskComponent } from './new-task/new-task.component';
+import { ListComponent } from './components/list/list.component';
+import { TaskComponent } from './components/task/task.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { NewListComponent } from './components/new-list/new-list.component';
+import { NewTaskComponent } from './components/new-task/new-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthComponent } from './components/auth/auth.component';
-import { RegisterComponent } from './register/register.component';
-import { AzComponent } from './az/az.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AzComponent } from './components/az/az.component';
 
 @NgModule({
   declarations: [
